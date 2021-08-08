@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
+import SauceItem from './SauceItem';
 
-export default function List() {
-  const [sauces, setSauces] = useState([]);
-  const [loading, setLoading] = useState(true);
 
+export default function List({ sauces }) {
+  
   return (
-    <div>
-      {sauces ?
-        <ul>
-          {sauces.map(sauce => (
-            <SauceItem key={sauce.name} sauce={sauce}/>
-          ))}
-        </ul>  :
-        <h1>No Sauces Yet</h1> }
-            
-    </div>
+    <ul>
+      {sauces.map(sauce => (
+        <SauceItem key={sauce.name} sauce={sauce}/>
+      ))}
+    </ul>   
   );
 }

@@ -1,20 +1,20 @@
-const URL = '/api/v1/sauces';
+const URL = 'http://localhost:7890/api/v1/sauces';
 
 export async function getSauces() {
   const response = await fetch(URL);
-  return response.body;
+  return response.json();
 }
 
 export async function getSauce(id) {
   const response = await fetch(`${URL}/${id}`);
-  return response.body;
+  return response.json();
 }
 
 export async function deleteSauce(id) {
   const response = await fetch(`${URL}/${id}`, {
     method: 'delete'
   });
-  return response.body;
+  return response.json();
 }
 
 export async function addSauce(sauce) {
@@ -23,7 +23,8 @@ export async function addSauce(sauce) {
     body: JSON.stringify(sauce),
     headers: { 'Content-Type': 'application/json' }
   });
-  return response.body;
+  console.log('response', response);
+  return response;
 }
 
 export async function updateSauce(sauce) {
@@ -32,6 +33,6 @@ export async function updateSauce(sauce) {
     body: JSON.stringify(sauce),
     headers: { 'Content-Type': 'application/json' }
   });
-  return response.body;
+  return response.json();
 }
 
