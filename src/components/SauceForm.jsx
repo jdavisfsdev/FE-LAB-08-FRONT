@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
-import { addSauce, getSauces } from '../utils/sauceApi';
+import SauceFormCSS from './SauceForm.module.css';
+import { addSauce } from '../utils/sauceApi';
 
 export default function SauceForm() {
   const [name, setName] = useState('');
@@ -34,11 +35,11 @@ export default function SauceForm() {
     };
     console.log(sauce);
     addSauce(sauce);
-    alert('Click Home to see your sauces');
+    alert('Sauce Added!');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={SauceFormCSS.form}>
       <p>
         <label>
           <span>Sauce Name</span>
@@ -48,7 +49,7 @@ export default function SauceForm() {
 
       <p>
         <label>
-          <span>Sauce URL</span>
+          <span>Sauce Image URL</span>
           <input type="text" name="url" placeholder="URL" onChange={handleUrlChange}/>
         </label>
       </p>

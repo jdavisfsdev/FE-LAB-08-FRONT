@@ -18,17 +18,17 @@ export async function deleteSauce(id) {
 }
 
 export async function addSauce(sauce) {
-  const response = await fetch(`${URL}/${sauce.id}`, {
+  const response = await fetch(URL, {
     method: 'post',
     body: JSON.stringify(sauce),
     headers: { 'Content-Type': 'application/json' }
   });
-
   return response;
 }
 
 export async function updateSauce(sauce) {
-  const response = await fetch(URL, {
+  const id = Number(sauce.id);
+  const response = await fetch(`${URL}/${id}`, {
     method: 'put',
     body: JSON.stringify(sauce),
     headers: { 'Content-Type': 'application/json' }

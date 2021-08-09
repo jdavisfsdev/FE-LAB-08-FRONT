@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SauceDetailsCSS from './SauceDeatils.module.css';
 import { useParams } from 'react-router-dom';
 import { getSauce, updateSauce } from '../utils/sauceApi';
 
@@ -44,16 +45,16 @@ export default function SauceDetails() {
 
   const handleClick = async () => {
     const sauce = {
-      name, price, url, heat
+      name, price, url, heat, id
     };
     setSauce(sauce);
     console.log(sauce);
     await updateSauce(sauce);
   };
   return (
-    <div>
+    <div className={SauceDetailsCSS.list}>
       Name <input type="text" placeholder={sauce.name} name="name" onChange={handleNameChange}/>
-      URL <input type="text" placeholder={sauce.url} name="url" onChange={handleUrlChange}/>
+      Image URL <input type="text" placeholder={sauce.url} name="url" onChange={handleUrlChange}/>
       Price <input type="text" placeholder={sauce.price} name="price" onChange={handlePriceChange}/>
       Heat <input type="text" placeholder={sauce.heat} name="heat" onChange={handleHeatChange}/>
       <button onClick={handleClick}>UPDATE</button>

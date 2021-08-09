@@ -13,6 +13,8 @@ export default function Header() {
         <button>Home</button>  
       </Link>
       </div>
+
+      <h1>HOT SAUCE TRACKER! ADD YOUR SAUCES</h1>
     </>
   );
 }
