@@ -14,7 +14,7 @@ export default function Main() {
   }, []);
     
   if(loading) return <h1>Loading...</h1>;
-  if(!sauces)
+  if(sauces.length === 0)
     return (
       <SauceForm /> 
     );

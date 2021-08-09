@@ -23,7 +23,7 @@ export async function addSauce(sauce) {
     body: JSON.stringify(sauce),
     headers: { 'Content-Type': 'application/json' }
   });
-  console.log('response', response);
+
   return response;
 }
 
