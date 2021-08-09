@@ -14,17 +14,21 @@ export default function SauceDetails() {
   useEffect(async () => {
     const sauce = await getSauce(id);
     setSauce(sauce);
+    setName(sauce.name);
+    setUrl(sauce.url);
+    setPrice(sauce.price);
+    setHeat(sauce.heat);
     setLoading(false);
   }, [handleClick]);
 
   const handleNameChange = ({ target }) => {
-    if(target.value == '') setName(name);
+    if(target.value === null) return;
     setName(target.value);
 
   };
 
   const handlePriceChange = ({ target }) => {
-    if(target.value === null) setPrice(price);
+    if(target.value === null) return;
     setPrice(target.value);
   };
 
@@ -39,17 +43,12 @@ export default function SauceDetails() {
   };
 
   const handleClick = async () => {
-    // const sauce = {
-    //   name, price, url, heat
-    // };
+    const sauce = {
+      name, price, url, heat
+    };
+    setSauce(sauce);
     console.log(sauce);
-    await updateSauce({
-      name,
-      url,
-      price,
-      heat,
-      id
-    });
+    await updateSauce(sauce);
   };
   return (
     <div>
