@@ -24,14 +24,17 @@ export default function SauceForm() {
     setHeat(target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const sauce = {
       name,
       url,
       price,
       heat
     };
+    console.log(sauce);
     addSauce(sauce);
+    alert('Click Home to see your sauces');
   };
 
   return (
@@ -64,7 +67,7 @@ export default function SauceForm() {
         </label>
       </p>
 
-      <button>SUBMIT</button>
+      <button onClick={handleSubmit}>SUBMIT</button>
     </form>
   );
 }

@@ -1,4 +1,4 @@
-const URL = 'http://localhost:7890/api/v1/sauces';
+const URL = 'https://damp-dusk-12585.herokuapp.com/api/v1/sauces';
 
 export async function getSauces() {
   const response = await fetch(URL);
