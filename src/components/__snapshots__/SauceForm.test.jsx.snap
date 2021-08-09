@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SauceForm component snapshot render Sauce form 1`] = `
+<DocumentFragment>
+  <form
+    class="form"
+  >
+    <p>
+      <label>
+        <span>
+          Sauce Name
+        </span>
+        <input
+          name="name"
+          placeholder="Name"
+          type="text"
+        />
+      </label>
+    </p>
+    <p>
+      <label>
+        <span>
+          Sauce Image URL
+        </span>
+        <input
+          name="url"
+          placeholder="URL"
+          type="text"
+        />
+      </label>
+    </p>
+    <p>
+      <label>
+        <span>
+          Sauce Price
+        </span>
+        <input
+          name="price"
+          placeholder="Price"
+          type="text"
+        />
+      </label>
+    </p>
+    <p>
+      <label>
+        <span>
+          Sauce Heat
+        </span>
+        <input
+          name="heat"
+          placeholder="Heat"
+          type="text"
+        />
+      </label>
+    </p>
+    <button>
+      SUBMIT
+    </button>
+  </form>
+</DocumentFragment>
+`;
