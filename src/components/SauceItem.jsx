@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { deleteSauce } from '../utils/sauceApi';
+import SauceItemCSS from './SauceItem.module.css';
 
 export default function SauceItem({ sauce }) {
 
@@ -10,7 +11,7 @@ export default function SauceItem({ sauce }) {
   };
 
   return (
-    <li>
+    <li className={SauceItemCSS.listItem}>
       <h2>{sauce.name}</h2>
       <img src={sauce.url} alt={sauce.name} />
       <h3>{sauce.price}</h3>

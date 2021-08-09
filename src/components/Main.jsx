@@ -11,7 +11,7 @@ export default function Main() {
     const sauces = await getSauces();
     setSauces(sauces);
     setLoading(false);
-  }, []);
+  }, [sauces]);
     
   if(loading) return <h1>Loading...</h1>;
   if(sauces.length === 0)

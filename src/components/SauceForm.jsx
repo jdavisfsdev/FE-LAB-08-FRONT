@@ -24,8 +24,7 @@ export default function SauceForm() {
     setHeat(target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     const sauce = {
       name,
       url,
